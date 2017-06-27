@@ -69,7 +69,8 @@ public class SimplestNetwork {
             .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT) // most commonly used Optimization algo
             .learningRate(learningRate)
             .weightInit(WeightInit.XAVIER) // Xavier is a weight randomizer optimized for NN
-            .updater(Updater.NESTEROVS).momentum(0.09) // How to update the weights start with momentum of 0.09
+            //.updater(Updater.NESTEROVS).momentum(0.09) // How to update the weights start with momentum of 0.09
+            .updater(Updater.ADAGRAD).momentum(0.09) // How to update the weights start with momentum of 0.09
             .list()
             .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(nHidden)
                 .activation(Activation.IDENTITY)
